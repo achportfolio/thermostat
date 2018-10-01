@@ -36,5 +36,19 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    
+<script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyD7CuxFy8lUTiC-cOe7Pm9Zt9uU8ANzEwc",
+    authDomain: "ach-client-demo.firebaseapp.com",
+    databaseURL: "https://ach-client-demo.firebaseio.com",
+    projectId: "ach-client-demo",
+    storageBucket: "ach-client-demo.appspot.com",
+    messagingSenderId: "1005945384103"
+  };
+  firebase.initializeApp(config);
+</script>
   </body>
 </html>
