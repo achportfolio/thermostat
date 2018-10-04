@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 496.552 430.667" style="enable-background:new 0 0 496.552 430.667;" xml:space="preserve">
+<g id="Reference">
+	
+		<image style="display:none;overflow:visible;" width="530" height="552" id="XMLID_46_" xlink:href="Screen Shot 2018-09-25 at 10.04.12 PM.png"  transform="matrix(1.0235 0 0 1.0235 -26.4758 -37.2231)">
+	</image>
+	
+		<image style="display:none;overflow:visible;" width="530" height="552" id="XMLID_2_" xlink:href="Screen Shot 2018-09-25 at 10.04.12 PM.png"  transform="matrix(1 0 0 1 -639.4487 -40.1216)">
+	</image>
+	<g id="XMLID_79_" style="display:none;">
+		
+			<image style="display:inline;overflow:visible;opacity:0.5;" width="530" height="552" id="XMLID_7_" xlink:href="arc.png"  transform="matrix(1 0 0 1 -824.9196 155.6667)">
+		</image>
+		<g id="XMLID_3_" style="display:inline;">
+		</g>
+	</g>
+	<path id="XMLID_14_" style="fill:none;stroke:#B1B0B1;stroke-width:49;stroke-miterlimit:10;" d="M396.414,411.333
+		c59.855-56.775,85.586-139.596,66.667-216.667C439.681,99.344,351.687,27.923,250,27.195
+		C153.384,26.504,66.901,89.792,37.955,180.292c-24.85,77.695-3.682,164.156,54.792,224.375"/>
+</g>
+<g id="Slider" style="display:none;">
+	<circle id="XMLID_1_" style="display:inline;fill:#787878;" cx="-773.919" cy="207.083" r="28.747"/>
+	
+		<line id="XMLID_18_" style="display:inline;fill:none;stroke:#B1B0B1;stroke-width:2;stroke-miterlimit:10;" x1="-785.465" y1="202.988" x2="-761.854" y2="202.998"/>
+	
+		<line id="XMLID_19_" style="display:inline;fill:none;stroke:#B1B0B1;stroke-width:2;stroke-miterlimit:10;" x1="-785.512" y1="207.748" x2="-761.901" y2="207.758"/>
+	
+		<line id="XMLID_20_" style="display:inline;fill:none;stroke:#B1B0B1;stroke-width:2;stroke-miterlimit:10;" x1="-785.515" y1="212.605" x2="-761.904" y2="212.615"/>
+	<polygon id="XMLID_21_" style="display:inline;fill:#B1B0B1;stroke:#B1B0B1;stroke-width:2;stroke-miterlimit:10;" points="
+		-775.383,197.898 -773.217,194.166 -771.068,197.908 	"/>
+	<polygon id="XMLID_23_" style="display:inline;fill:#B1B0B1;stroke:#B1B0B1;stroke-width:2;stroke-miterlimit:10;" points="
+		-775.382,217.55 -773.216,221.282 -771.067,217.54 	"/>
+</g>
+<g id="Layer_3" style="display:none;">
+	
+		<image style="display:inline;overflow:visible;" width="530" height="552" xlink:href="arc.png"  transform="matrix(1 0 0 1 -824.9196 155.6667)">
+	</image>
+</g>
+</svg>
