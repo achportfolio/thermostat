@@ -33,29 +33,31 @@ class Thermostat extends Component {
 
   render() {
     return (
-      <div className="Thermostat">
-      <img src={arc} alt={'arc'} className={'arc'}/>
-      <p className={'arcLimit'}>80 &deg;F</p>
-	    <Roundy
-		   id={'arc'}
-		   value={this.state.readout}
-		   min={60}
-		   max={140}
-		   step={1}
-		   radius={155}
-		   sliced={false}
-		   strokeWidth={25} 
-		   onChange={value => this.handleThermoChange(value)}
-		   color='transparent'
-		   bgColor='transparent'
-		   overrideStyle={ 'position:absolute; top: 1.6%;'}
-		/>
-        <div className="Temperature">
-          <div className="TemperatureReading">
-            <input id={"inputReadout"} min={60} max={80} className="Readout" value={this.state.readout} onChange={this.handleChange}/>
-            <p className="Scale">&deg;F</p>
-          </div>
-        </div>
+      <div className={'ThermostatWrapper'}>
+	      <div className="Thermostat">
+	      <img src={arc} alt={'arc'} className={'arc'}/>
+	      <p className={'arcLimit'}>80 &deg;F</p>
+		    <Roundy
+			   id={'arc'}
+			   value={this.state.readout}
+			   min={60}
+			   max={140}
+			   step={1}
+			   radius={155}
+			   sliced={false}
+			   strokeWidth={25} 
+			   onChange={value => this.handleThermoChange(value)}
+			   color='transparent'
+			   bgColor='transparent'
+			   overrideStyle={ 'position:absolute; top: 1.6%;'}
+			/>
+	        <div className="Temperature">
+	          <div className="TemperatureReading">
+	            <input id={"inputReadout"} min={60} max={80} className="Readout" value={this.state.readout} onChange={this.handleChange}/>
+	            <p className="Scale">&deg;F</p>
+	          </div>
+	        </div>
+	      </div>
       </div>
     );
   }

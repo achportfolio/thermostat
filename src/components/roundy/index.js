@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
 import { Wrapper } from './Style';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -15,7 +14,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var DEGREE_IN_RADIANS = Math.PI / 180;
 var classNamePrefix = 'RoundSlider';
 
-var prevClick, prevEX, prevEY = 0;
+var prevEX, prevEY = 0;
+var turnOn = false;
 
 var Roundy = function (_Component) {
   _inherits(Roundy, _Component);
@@ -53,13 +53,16 @@ var Roundy = function (_Component) {
     _this.down = function (e) {
       let arc = window.document.getElementById('arc');
       let rect = arc.children[1].getBoundingClientRect();
-      let turnOn = false;
 
       _this._svgElement.style.pointerEvents = 'auto';
       e.stopPropagation();
 
-      if(turnOn === true) {
-        if ((prevEX > (rect.right + 30) || prevEX < (rect.right - 30)) || (prevEY > (rect.top + 30) || prevEY < (rect.top - 30))) {e.preventDefualt;return;}
+      console.log(prevEX);
+      console.log(rect.right);
+
+      if(turnOn == true) {
+          if ((prevEX > (rect.right + 20) || prevEX < (rect.right - 20)) || (prevEY > (rect.top + 20) || prevEY < (rect.top - 25))) {_this.isDrag = false;
+      _this.allowChange = false;prevEX=rect.right;prevEY=rect.top;e.preventDefault();return;} 
       }  
         else {turnOn = true;}
 
@@ -83,8 +86,6 @@ var Roundy = function (_Component) {
 
     _this.getArc = function (value) {
       var _this$props2 = _this.props,
-          max = _this$props2.max,
-          min = _this$props2.min,
           radius = _this$props2.radius,
           strokeWidth = _this$props2.strokeWidth;
 
@@ -164,8 +165,7 @@ var Roundy = function (_Component) {
           y = eY - top;
 
       var _this$stepRounding = _this.stepRounding(_this.angle(y, x)),
-          value = _this$stepRounding.value,
-          angle = _this$stepRounding.angle;
+          value = _this$stepRounding.value;
 
       _this.setState({ value: value });
       _this.props.onChange && _this.props.onChange(value, _this.props);
@@ -220,8 +220,7 @@ var Roundy = function (_Component) {
   Roundy.prototype.stepRounding = function stepRounding(degree) {
     var _props = this.props,
         step = _props.step,
-        min = _props.min,
-        max = _props.max;
+        min = _props.min;
 
     var value = this.angleToValue(degree);
     var remain = void 0,
