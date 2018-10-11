@@ -14,8 +14,9 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var DEGREE_IN_RADIANS = Math.PI / 180;
 var classNamePrefix = 'RoundSlider';
 
-var prevEX, prevEY = 0;
-var turnOn = false;
+var prevEX, prevEY, imprintValue, imprintValue1, blank, blank1;
+
+prevEX = 0; prevEY = 0; imprintValue = 0; imprintValue1 = 0; blank = true; blank1 = true;
 
 var Roundy = function (_Component) {
   _inherits(Roundy, _Component);
@@ -51,20 +52,9 @@ var Roundy = function (_Component) {
     };
 
     _this.down = function (e) {
-      let arc = window.document.getElementById('arc');
-      let rect = arc.children[1].getBoundingClientRect();
 
       _this._svgElement.style.pointerEvents = 'auto';
       e.stopPropagation();
-
-      console.log(prevEX);
-      console.log(rect.right);
-
-      if(turnOn == true) {
-          if ((prevEX > (rect.right + 20) || prevEX < (rect.right - 20)) || (prevEY > (rect.top + 20) || prevEY < (rect.top - 25))) {_this.isDrag = false;
-      _this.allowChange = false;prevEX=rect.right;prevEY=rect.top;e.preventDefault();return;} 
-      }  
-        else {turnOn = true;}
 
       _this.isDrag = true;
       _this.allowChange = true;
@@ -151,8 +141,14 @@ var Roundy = function (_Component) {
       eX = clientX;
       eY = clientY;
 
-      if ((eX > (rect.right + 30) || eX < (rect.right - 30)) || (eY > (rect.top + 30) || eY < (rect.top - 30))) {return;}
+      if ((eX > (rect.right + 47) || eX < (rect.right - 47)) || (eY > (rect.top + 45) || eY < (rect.top - 45))) {_this.isDrag=false;_this.allowChange=false;return;}
       if ((targetValue >79 && prevEY < eY) || (targetValue < 61 && prevEX > eX)) {return;}
+
+      if (targetValue < 62 && blank === true) {imprintValue=eX; blank=false;console.log('yep');}
+      if ((blank==false ) && (imprintValue > (eX + 27))) {_this.isDrag=false;_this.allowChange=false;_this.setState({ value: 60 });return;}
+
+      if (targetValue > 78 && blank1 ===true) {imprintValue1=eY; blank1=false;}
+      if ((blank1===false) && (imprintValue1 < (eY - 20))) {_this.isDrag=false;_this.allowChange=false;_this.setState({ value: 80 });return;}
 
       prevEY = eY;
       prevEX = eX;
