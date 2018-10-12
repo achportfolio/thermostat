@@ -18,6 +18,12 @@ var prevEX, prevEY, imprintValue, imprintValue1, blank, blank1;
 
 prevEX = 0; prevEY = 0; imprintValue = 0; imprintValue1 = 0; blank = true; blank1 = true;
 
+window.addEventListener('resize', resetWindow);
+
+function resetWindow() {
+  prevEX = 0; prevEY = 0; imprintValue = 0; imprintValue1 = 0; blank = true; blank1 = true;  
+}
+
 var Roundy = function (_Component) {
   _inherits(Roundy, _Component);
 
@@ -125,7 +131,8 @@ var Roundy = function (_Component) {
     };
 
     _this.updateValue = function (event, forceSet) {
-      let target = window.document.getElementById('inputReadout');
+      let target = window.document.getElementById('arc');
+      let readout = window.document.getElementById('inputReadout');
       let arc = window.document.getElementById('arc');
       let targetValue = target.getAttribute("value");
 
@@ -141,14 +148,14 @@ var Roundy = function (_Component) {
       eX = clientX;
       eY = clientY;
 
-      if ((eX > (rect.right + 47) || eX < (rect.right - 47)) || (eY > (rect.top + 45) || eY < (rect.top - 45))) {_this.isDrag=false;_this.allowChange=false;return;}
+      if (blank === true) {imprintValue=(eX -41); blank=false;}
+      if (targetValue > 78 && blank1 ===true) {imprintValue1=eY; blank1=false;}
+
+      if ((eX > (rect.right + 60) || eX < (rect.right - 58)) || (eY > (rect.top + 58) || eY < (rect.top - 60))) {_this.isDrag=false;_this.allowChange=false;return;}
       if ((targetValue >79 && prevEY < eY) || (targetValue < 61 && prevEX > eX)) {return;}
 
-      if (targetValue < 62 && blank === true) {imprintValue=eX; blank=false;console.log('yep');}
-      if ((blank==false ) && (imprintValue > (eX + 27))) {_this.isDrag=false;_this.allowChange=false;_this.setState({ value: 60 });return;}
-
-      if (targetValue > 78 && blank1 ===true) {imprintValue1=eY; blank1=false;}
-      if ((blank1===false) && (imprintValue1 < (eY - 20))) {_this.isDrag=false;_this.allowChange=false;_this.setState({ value: 80 });return;}
+      if ((blank===false ) && (imprintValue > (eX))) {_this.isDrag=false;_this.setState({ value: 60 });readout.setAttribute('value', '60');return;}
+      if ((blank1===false) && (imprintValue1 < (eY - 20))) {_this.isDrag=false;_this.setState({ value: 80 });return;}
 
       prevEY = eY;
       prevEX = eX;

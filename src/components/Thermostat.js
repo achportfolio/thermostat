@@ -6,16 +6,18 @@ import Roundy from './roundy/index';
 class Thermostat extends Component {
   constructor() {
     super();
-    this.state={readout: 60}
+    this.state={readout: 60, readoutType: 60}
 
     this.handleChange = this.handleChange.bind(this);
     this.handleThermoChange = this.handleThermoChange.bind(this);
   };
 
   handleChange(event) {
-    //if (event.target.value > 80) {this.setState({readout: 80});}
-    //if (event.target.value < 59) {this.setState({readout: 60});}
-     this.setState({readout: event.target.value});
+  	let changeThreshold = 0;
+    
+    this.setState({readoutType: event.target.value});
+    changeThreshold = event.target.value;
+    if (changeThreshold > 59 && changeThreshold < 81) {this.setState({readout: event.target.value});}
   }
 
   handleThermoChange(value) {
@@ -28,6 +30,7 @@ class Thermostat extends Component {
   	}
   	else if (value <= 80 && value >= 60) {
   		this.setState({readout: value});
+  		this.setState({readoutType: value});
   	}
   }
 
@@ -53,7 +56,7 @@ class Thermostat extends Component {
 			/>
 	        <div className="Temperature">
 	          <div className="TemperatureReading">
-	            <input id={"inputReadout"} min={60} max={80} className="Readout" value={this.state.readout} onChange={this.handleChange}/>
+	            <input id={"inputReadout"} className={"Readout"} value={this.state.readoutType} onChange={this.handleChange}/>
 	            <p className="Scale">&deg;F</p>
 	          </div>
 	        </div>
