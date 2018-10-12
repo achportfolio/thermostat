@@ -151,11 +151,11 @@ var Roundy = function (_Component) {
       if (blank === true) {imprintValue=(eX -41); blank=false;}
       if (targetValue > 78 && blank1 ===true) {imprintValue1=eY; blank1=false;}
 
-      if ((eX > (rect.right + 60) || eX < (rect.right - 58)) || (eY > (rect.top + 58) || eY < (rect.top - 60))) {_this.isDrag=false;_this.allowChange=false;return;}
+      if ((eX > (rect.right + 60) || eX < (rect.right - 78)) || (eY > (rect.top + 78) || eY < (rect.top - 60))) {_this.isDrag=false;_this.allowChange=false;return;}
       if ((targetValue >79 && prevEY < eY) || (targetValue < 61 && prevEX > eX)) {return;}
 
-      if ((blank===false ) && (imprintValue > (eX))) {_this.isDrag=false;_this.setState({ value: 60 });readout.setAttribute('value', '60');return;}
-      if ((blank1===false) && (imprintValue1 < (eY - 20))) {_this.isDrag=false;_this.setState({ value: 80 });return;}
+      if ((blank===false ) && (imprintValue > (eX))) {_this.isDrag=false;_this.setState({ value: 60 });readout.value='60';return;}
+      if ((blank1===false) && (imprintValue1 < (eY - 16))) {_this.isDrag=false;_this.setState({ value: 80 });readout.value='80';return;}
 
       prevEY = eY;
       prevEX = eX;

@@ -52,8 +52,7 @@ class Thermostat extends Component {
 			   onChange={value => this.handleThermoChange(value)}
 			   color='transparent'
 			   bgColor='transparent'
-			   overrideStyle={ 'position:absolute; top: 1.6%;'}
-			/>
+			   overrideStyle={ 'position:absolute; top: 1.6%;'}/>
 	        <div className="Temperature">
 	          <div className="TemperatureReading">
 	            <input id={"inputReadout"} className={"Readout"} value={this.state.readoutType} onChange={this.handleChange}/>
